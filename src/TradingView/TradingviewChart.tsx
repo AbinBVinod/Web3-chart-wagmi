@@ -9,15 +9,15 @@ import ChartView from "./TradingviewChart"
 export default function TradingViewPage() {
   return (
     <>
-    <div className={tvc.main}>
-         <CustomWallet/>
+      <div className={tvc.main}>
+        <CustomWallet />
         <div className={tvc.cont}>
-           <h1>Trading View Chart</h1>
-           <div className={tvc.chart}>
-               <ChartView/>
-           </div>
+          <h1>Trading View Chart</h1>
+          <div className={tvc.chart}>
+            {/* <ChartView/>  */}
+          </div>
         </div>
-    </div>
+      </div>
     </>
-  )
+  );
 }
