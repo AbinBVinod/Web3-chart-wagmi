@@ -1,51 +1,61 @@
-
-"use client"
 import React, { useEffect, useRef } from 'react';
-import { createChart, IChartApi, LineSeriesPartialOptions, ISeriesApi, ColorType } from 'lightweight-charts';
+import { createChart, DeepPartial, ChartOptions } from 'lightweight-charts';
 
-interface ChartViewProps {
-  width?: number;
-  height?: number;
+interface ChartProps {
+
 }
 
-const ChartView: React.FC<ChartViewProps> = ({ width = 400, height = 300 }) => {
-  const chartContainerRef = useRef<HTMLDivElement | null>(null);
+const ChartComponent: React.FC<ChartProps> = (props) => {
+  const chartContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!chartContainerRef.current) return;
+    let chart:any;
+    if (chartContainerRef.current) {
+      chart = createChart(chartContainerRef.current, {
+        width: chartContainerRef.current.clientWidth,
+        height: 300,
+        layout: {
+          backgroundColor: '#000000',
+          textColor: 'rgba(255, 255, 255, 0.9)',
+        },
+        grid: {
+          vertLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+          },
+          horzLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+          },
+        },
+        timeScale: {
+          timeVisible: true,
+          secondsVisible: false,
+        },
+      } as DeepPartial<ChartOptions>);
 
-    const initialData = [
-      { time: '2021-04-11', value: 80.01 },
-      { time: '2021-04-12', value: 96.63 },
-      { time: '2021-04-13', value: 76.64 },
-      { time: '2021-04-14', value: 81.89 },
-      { time: '2021-04-15', value: 74.43 },
-      { time: '2021-04-16', value: 80.01 },
-      { time: '2021-04-17', value: 96.63 },
-      { time: '2021-04-18', value: 76.64 },
-      { time: '2021-04-19', value: 81.89 },
-      { time: '2021-04-20', value: 74.43 },
-    ];
+      const areaSeries = chart.addAreaSeries({
+        topColor: 'rgba(33, 150, 243, 0.56)',
+        bottomColor: 'rgba(33, 150, 243, 0.04)',
+        lineColor: 'rgba(33, 150, 243, 1)',
+        lineWidth: 2,
+      });
 
-    const chart: IChartApi = createChart(chartContainerRef.current, {
-      width,
-      height,
-      layout: {
-        background: { type: ColorType.Solid, color: 'white' },
-      },
-    });
+      areaSeries.setData([
+        { time: '2019-04-11', value: 80.01 },
+        { time: '2019-04-12', value: 96.63 },
+        { time: '2019-04-13', value: 76.64 },
+        { time: '2019-04-14', value: 81.89 },
+        { time: '2019-04-15', value: 74.43 },
+      ]);
+    }
 
-    const seriesOptions: LineSeriesPartialOptions = {
-      color: '#2962FF',
-      lineWidth: 2,
+    return () => {
+      if (chart) {
+        chart.remove();
+      }
     };
+  }, []);
 
-    const lineSeries: ISeriesApi<'Line'> = chart.addLineSeries(seriesOptions);
-    lineSeries.setData(initialData);
-
-    return () => chart.remove();
-  }, [width, height]);
-  return <div ref={chartContainerRef} style={{ width: '100%', height: `${height}px` }} />;
+  return <div ref={chartContainerRef} style={{ width: '100%', height: '300px' }} />;
 };
 
-export default ChartView;
+export default ChartComponent;
