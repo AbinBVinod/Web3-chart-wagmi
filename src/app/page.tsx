@@ -1,9 +1,9 @@
-import TradingViewPage from "@/TradingView/TradingviewChart"
+import WalletViewPage from "@/walletConnect/walletinteractionChart"
 
 export default function Home() {
   return (
    <>
-   <TradingViewPage/>
+   <WalletViewPage/>
    </>
   );
 }

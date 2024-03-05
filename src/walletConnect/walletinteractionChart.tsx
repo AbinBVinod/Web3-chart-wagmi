@@ -2,13 +2,12 @@
 import React from 'react'
 import tvc from './Tradingview.module.css'
 import { CustomWallet } from "../components/wallet/CustomWallet"
-// import ChartComponent from "./TradingviewChart"
 import { useAccount } from 'wagmi'
-import { useSigner } from 'wagmi';
 
 
 
-export default function TradingViewPage() {
+
+export default function WalletViewPage() {
   const { address, chainId , connector, chain } = useAccount();
 
   const shortenAddress = (address:string) => {
