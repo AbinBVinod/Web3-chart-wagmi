@@ -20,7 +20,7 @@ import { WagmiProvider } from 'wagmi';
 
 const { wallets } = getDefaultWallets();
 
-const config = getDefaultConfig({
+export const config = getDefaultConfig({
   appName: 'AssetManager',
   projectId: 'ace03604c7f4310793c0fd698e4e64db',
   wallets: [
