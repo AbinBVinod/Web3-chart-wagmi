@@ -2,7 +2,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Cwm from "./customwallet.module.css";
 import Walletoption from "./walop.svg";
-import Frame from "./frame.svg";
 import Image from "next/image";
 
 export const CustomWallet = () => {

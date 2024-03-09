@@ -13,6 +13,7 @@ import {
 import {
   arbitrum,
   optimism,
+  arbitrumSepolia
 } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
@@ -32,6 +33,7 @@ const config = getDefaultConfig({
   chains: [
     arbitrum,
     optimism,
+    arbitrumSepolia
   ],
   ssr: true,
 });

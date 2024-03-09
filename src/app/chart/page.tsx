@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import {
   ChartingLibraryWidgetOptions,
   ResolutionString,
@@ -27,12 +26,12 @@ const TVChartContainer = dynamic(
 );
 
 export default function page() {
-  const [isScriptReady, setIsScriptReady] = useState(false);
+  // const [isScriptReady, setIsScriptReady] = React.useState(false);
   return (
     <>
     <div className='flex justify-center mt-8 text-4xl font-bold gap-7'>
         <h1>Trading Chart</h1>
-        {isScriptReady && <TVChartContainer {...defaultWidgetProps} />}
+        {/* {isScriptReady && <TVChartContainer {...defaultWidgetProps} />} */}
     </div>
     </>
   )
