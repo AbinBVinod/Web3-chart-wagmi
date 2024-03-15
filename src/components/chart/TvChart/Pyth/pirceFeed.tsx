@@ -48,7 +48,7 @@ const PriceFeedDisplay = () => {
       }
     };
 
-    const interval = setInterval(fetchData , 1000); 
+    const interval = setInterval(fetchData , 500); 
 
     return () => clearInterval(interval);
   }, []);
@@ -60,7 +60,7 @@ const PriceFeedDisplay = () => {
 
   return (
     <div>
-      <h1>Price Feeds</h1>
+      <h1 className='mb-[10px]'>Price Feeds</h1>
       <p>BTC/USD: {btcPrice ?? 'Loading...'}</p>
       <p>ETH/USD: {ethPrice ?? 'Loading...'}</p>
     </div>
