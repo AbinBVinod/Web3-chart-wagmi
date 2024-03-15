@@ -44,3 +44,11 @@
 .balance {
   @apply flex flex-col gap-10
 }
+
+.tokenall {
+  @apply flex flex-col gap-6
+}
+
+.TokenDataAll {
+  @apply flex flex-col gap-3
+}

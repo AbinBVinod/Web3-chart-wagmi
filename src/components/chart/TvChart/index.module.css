@@ -14,3 +14,7 @@
 .TVChartContainer {
 	height: calc(100vh - 60px);
 }
+
+.contant {
+	@apply flex justify-center
+}
