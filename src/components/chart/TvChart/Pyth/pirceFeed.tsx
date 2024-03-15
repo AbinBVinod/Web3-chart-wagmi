@@ -23,12 +23,12 @@ const PriceFeedDisplay = () => {
       try {
         const currentPrices = await connection.getLatestPriceFeeds(priceIds);
         if (currentPrices) {
-          console.log("Current Prices:", currentPrices);
+          // console.log("Current Prices:", currentPrices);
 
           currentPrices.forEach(priceFeed => {
             const priceInfo = priceFeed.getPriceNoOlderThan(60);
             if (priceInfo) {
-              console.log(`Received update for ${priceFeed.id}: ${priceInfo.price}`);
+              // console.log(`Received update for ${priceFeed.id}: ${priceInfo.price}`);
 
               const formattedPrice = formatPrice(priceInfo.price, priceInfo.expo);
               if (priceFeed.id === priceIds[0]) {
