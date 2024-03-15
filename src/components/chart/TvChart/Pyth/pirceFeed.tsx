@@ -55,7 +55,10 @@ const PriceFeedDisplay = () => {
 
   function formatPrice(price: string, expo: number): string {
     const priceNum = Number(price);
-    return (priceNum * Math.pow(10, expo)).toFixed(Math.abs(expo));
+    const adjustedPrice = priceNum * Math.pow(10, expo);
+    const formattedPrice = adjustedPrice.toFixed(2);
+    return formattedPrice;
+
   }
 
   return (
