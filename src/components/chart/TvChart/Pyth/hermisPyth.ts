@@ -38,7 +38,7 @@ function formatPrice(price: string, expo: number): string {
 }
 
 export function startHermesStreaming(callback: (symbol: string, price: string) => void, retries: number = 10, delay: number = 3000): void {
-  console.log('\[HERMES\] price streaming started');
+  // console.log('\[HERMES\] price streaming started');
   if (!isHermesStreamingOn) {
     try {
       isHermesStreamingOn = true;
@@ -48,10 +48,9 @@ export function startHermesStreaming(callback: (symbol: string, price: string) =
           const symbol: string | undefined = priceIdsMap[priceFeed.id];
           if (symbol) {
             let pythPrice: string = BigInt(price.price).toString();
-            // Use the correct property name 'expo' as indicated
             const formattedPythPrice = formatPrice(pythPrice, price.expo);
             callback(symbol, formattedPythPrice);
-            console.log('\[HERMES\] price updated', symbol, ': ', formattedPythPrice);
+            // console.log('\[HERMES\] price updated', symbol, ': ', formattedPythPrice);
           }
         }
       });
@@ -60,7 +59,7 @@ export function startHermesStreaming(callback: (symbol: string, price: string) =
       attemptReconnect(retries, delay);
     }
   } else {
-    console.log('\[HERMES\] Streaming already running.');
+    // console.log('\[HERMES\] Streaming already running.');
   }
 
   function attemptReconnect(retriesLeft: number, inDelay: number): void {
