@@ -8,7 +8,7 @@ import {
     ResolutionString,
     SearchSymbolsCallback,
     SubscribeBarsCallback,
-  } from '@/components/chart/charting_library/charting_library.d'
+  } from '../../../public/tradingview/charting_library'
   
   const myCustomData = [
     // { time: UNIX_TIMESTAMP, open: NUMBER, high: NUMBER, low: NUMBER, close: NUMBER, volume: NUMBER },

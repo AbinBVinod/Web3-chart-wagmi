@@ -3,7 +3,7 @@ import {
   widget as TradingViewWidget,
   ChartingLibraryWidgetOptions,
   IChartingLibraryWidget,
-} from '@/components/chart/charting_library/charting_library';
+} from '../../../public/tradingview/charting_library';
 import DataFeedFactory from './DataFeed';
 
 
