@@ -25,6 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <script defer src="/tradingview/charting_library/charting_library.standalone.js"/>
+      </head>
       <body className={jetBrains_Mono.className}><Providers>{children}</Providers></body>
     </html>
   );

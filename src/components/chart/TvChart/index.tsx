@@ -1,4 +1,5 @@
 import styles from "./index.module.css";
+import TradingViewChart from "../tradingview/TvChart"
 
 export const TVChartContainer = () => {
 	
@@ -11,7 +12,8 @@ export const TVChartContainer = () => {
 				</h1>
 			</header>
 			<div className={styles.contant}>
-               
+               Chart Here
+			   <TradingViewChart/>
 			</div>
 		</>
 	);

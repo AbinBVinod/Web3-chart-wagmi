@@ -16,5 +16,5 @@
 }
 
 .contant {
-	@apply flex justify-center
+	@apply flex flex-col w-full h-full 
 }

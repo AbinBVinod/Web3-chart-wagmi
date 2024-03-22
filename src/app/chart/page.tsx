@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PriceFeedDisplay from "@/components/chart/TvChart/Pyth/pirceFeed";
+import { TVChartContainer } from "@/components/chart/TvChart/index"
 import PriceStreamer from '@/components/chart/TvChart/Pyth/hermisPRICE';
 
 export default function page() {
@@ -11,19 +11,11 @@ export default function page() {
         <h1>Trading Chart Pyth</h1>
       </div>
       <div className="ml-[100px]">
-        {/* <PriceFeedDisplay /> */}
         <PriceStreamer />
       </div>
-      <div className="flex justify-start ml-[280px] mt-9 flex-col">
-        <h1 className="text-xl">Trading Chart</h1>
+      <div className="w-full">
+      <TVChartContainer/>
       </div>
-
-      <div className="flex justify-center">Chart here</div>
-        
-        <div>
-
-        </div>
-       
     </>
   );
 }
